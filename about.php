@@ -23,6 +23,13 @@
 			<i class="fa fa-bars"></i>
 		</a>
 	</div>
+	<main>
+		<section>
+			<article>
+				Aplicación para registro y login de usuarios.
+			</article>
+		</section>
+	</main>
 
     <footer class="pie">
         Abril 2021, by Ramón

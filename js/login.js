@@ -5,7 +5,7 @@ const inputs = document.querySelectorAll('#formulario input');
 //Expresiones regulares, para saber lo que cada input debe tener
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
-	password: /^.{4,12}$/, // 4 a 12 digitos.
+	password: /^[a-zA-Z0-9\_\-]{4,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,//1ra expresion + la arroba porsupuesto + punto + dominios
 	// telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }

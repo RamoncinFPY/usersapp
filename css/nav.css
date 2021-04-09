@@ -35,6 +35,25 @@
     color: white;
     height: 20px;
   }
+  .container1 {
+    font-size: 1.2rem;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  span {
+    color:#333;
+    font-size: 25px;
+  }
+  .salir {
+    letter-spacing: 7px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+
+  }
   
   @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}

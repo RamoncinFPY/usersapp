@@ -26,8 +26,10 @@
 
 	<main>
 		<h1>Formulario de registro</h1>
-		<form action="" class="formulario" id="formulario">
-		<!--PARA ENCRIPTAR  $enc_pass = md5($_POST['password']);-->	
+		<form action="action/nuevo_registro.php" method="POST"
+			enctype="multipart/form-data"  
+			class="formulario" id="formulario">
+
 			<!-- Grupo: Nombre -->
 			<div class="formulario__grupo" id="grupo__nombre">
 				<label for="nombre" class="formulario__label">Nombre</label>
@@ -55,7 +57,7 @@
 					<input type="password" class="formulario__input" name="password" id="password">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos, puede tener letras Aa-_ y números.</p>
 			</div>
 
 			<!-- Grupo: Contraseña 2 -->
@@ -106,20 +108,21 @@
 				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
 			</div> -->
 			
-			<!-- Grupo: Terminos y Condiciones -->
-			<div class="formulario__grupo" id="grupo__terminos">
-				<label class="formulario__label">
-					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-					Acepto los Terminos y Condiciones
-				</label>
+			<!-- Grupo: Imagen -->
+			<div class="formulario__grupo" id="">
+				<label class="formulario__label">Añadir imagen</label>
+				<div class="formulario__grupo-input">
+					<input name="archivo" id="archivo" type="file">
+					<input type="hidden" name="MAX_FILE_SIZE" value="130000"><br>
+				</div>
 			</div>
 
 			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente y ACEPTA los terminos. </p>
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Enviar</button>
+				<button type="submit" class="formulario__btn" name="enviar">Enviar</button>
 				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
 			</div>
 		</form>

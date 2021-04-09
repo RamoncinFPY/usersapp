@@ -1,4 +1,5 @@
 <?php
+	include('bd/consulta.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,11 +25,10 @@
 			<i class="fa fa-bars"></i>
 		</a>
 	</div>
-	<main>
-		<h1>Bienvenido <?php echo'AQUI LA FUNCIÓN QUE DEVUELVE LOS DATOS DE LA BD'?></h1>
-		
 
-			
+	<main>
+		<h1>Bienvenido</h1>
+		<?php datos_usuario();?>		
 	</main>
 	<footer class="pie">
 		Abril 2021, by Ramón

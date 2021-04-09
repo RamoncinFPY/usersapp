@@ -16,7 +16,7 @@ const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
+	password: /^[a-zA-Z0-9\_\-]{4,12}$/, // 4 a 12 digitos, Letras, numeros, guion y guion_bajo
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,//1ra expresion + la arroba porsupuesto + punto + dominios
 	// telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
@@ -128,12 +128,12 @@ inputs.forEach((input) => {
 });
 //Cuando se le dé al submit para enviar (e) es el evento
 formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
+	// e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
 	//comprobación de todos los inputs
 	if(campos.usuario && campos.nombre && campos.password && campos.correo && terminos.checked ){
-		formulario.reset();
+		// formulario.reset();//para vaciar el formulario
 		//Mensaje de envío correcto
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {

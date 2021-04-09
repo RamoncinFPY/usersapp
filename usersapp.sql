@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-04-2021 a las 00:50:04
+-- Tiempo de generación: 09-04-2021 a las 11:34:28
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -33,7 +33,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `estatus` int(1) NOT NULL DEFAULT 0,
   `registro` timestamp NOT NULL DEFAULT current_timestamp(),
   `actualizacion` timestamp NOT NULL DEFAULT current_timestamp()
@@ -45,7 +45,12 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `apellido`, `email`, `password`, `estatus`, `registro`, `actualizacion`) VALUES
 (1, 'test1', 'test', 'uno', 'test@uno.com', '1234', 0, '2021-04-07 09:57:33', '2021-04-07 09:57:33'),
-(2, 'admin', 'test', 'uno', 'admin@admin.com', '1234', 0, '2021-04-07 22:39:08', '2021-04-07 22:39:08');
+(2, 'admin', 'test', 'uno', 'admin@admin.com', '1234', 0, '2021-04-07 22:39:08', '2021-04-07 22:39:08'),
+(3, 'aaaa', 'a', 'a', 'a@a.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0, '2021-04-08 13:06:14', '2021-04-08 13:06:14'),
+(4, 'bbbb', 'b', 'b', 'b@b.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0, '2021-04-08 13:31:36', '2021-04-08 13:31:36'),
+(5, 'cccc', 'c', 'c', 'c@c.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0, '2021-04-08 14:15:54', '2021-04-08 14:15:54'),
+(6, 'dddd', 'd', 'd', 'd@d.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0, '2021-04-08 19:09:54', '2021-04-08 19:09:54'),
+(7, 'eeee', 'e', 'e', 'e@e.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0, '2021-04-09 08:41:43', '2021-04-09 08:41:43');
 
 --
 -- Índices para tablas volcadas
@@ -67,7 +72,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

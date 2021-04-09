@@ -23,6 +23,7 @@
 			<i class="fa fa-bars"></i>
 		</a>
 	</div>
+	<h1>Editar</h1>
 
     <footer class="pie">
         Abril 2021, by Ramón
