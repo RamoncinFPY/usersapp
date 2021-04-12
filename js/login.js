@@ -4,10 +4,9 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 //Expresiones regulares, para saber lo que cada input debe tener
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
-	password: /^[a-zA-Z0-9\_\-]{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,//1ra expresion + la arroba porsupuesto + punto + dominios
-	// telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo.
+	password: /^[a-zA-Z0-9\_\-]{4,12}$/, // Letras, numeros, guion y guion_bajo. 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,// 1ra expresion + la arroba porsupuesto + punto + dominios
 }
 //Al principiio todos los campos como false
 const campos = {
@@ -77,3 +76,52 @@ formulario.addEventListener('submit', (e) => {
 		}, 5000);
 	}
 });
+
+//Para hacer aparecer y ocultar mi form de editar
+function caja2() 
+	{
+		document.getElementById("caja2").style.visibility = "visible";
+	}
+
+function caja3() 
+	{
+		document.getElementById("caja3").style.visibility = "visible";
+	}
+
+function quita2() 
+	{
+		document.getElementById("caja2").style.visibility = "hidden";
+	}
+
+function quita3() 
+	{
+		document.getElementById("caja3").style.visibility = "hidden";
+	}
+// var clic = 1;
+// function divCaja2()
+// 	{ 
+//    		if(clic==1)
+// 			{
+// 				document.getElementById("caja2").style.visibility = "visible";
+// 				clic = clic + 1;
+// 			}else
+// 				{
+// 					document.getElementById("caja2").style.visibility = "hidden";      
+// 					clic = 1;
+// 				}   
+// 	}
+
+// //Para hacer aparecer y ocultar el eliminar
+// var click = 1;
+// function divCaja3()
+// 	{ 
+// 		if(click==1)
+// 			{
+// 				document.getElementById("caja3").style.visibility = "visible";
+// 				click = click + 1;
+// 			}else
+// 				{
+// 					document.getElementById("caja3").style.visibility = "hidden";      
+// 					click = 1;
+// 				}   
+// 		}		

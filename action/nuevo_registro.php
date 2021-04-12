@@ -3,9 +3,6 @@
     echo '<link rel="stylesheet" href="../css/nav.css" type="text/css" media="all" />';
     echo '<div class="topnav" id="myTopnav">
                 <a href="../index.php">Login</a>
-                <a href="../registro.php">Registro</a>
-                <a href="../editar.php">Editar</a>
-                <a href="../eliminar.php">Eliminar</a>
                 <a href="../about.php">About</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
@@ -21,7 +18,9 @@
 
     if(($_POST == null) or ($_POST == ""))
         {
+            session_destroy();
             header("location:../registro.php");
+            die();
         }
          
     //validación del formulario
@@ -57,7 +56,7 @@
         {while($row = $result->fetch_assoc())//para obtener el id 
             {   
                 $id = $row['id'];
-                echo "Id: ".$id;
+                // echo "Id: ".$id;
             }
         //Al darle click al botón
         if (isset($_POST['enviar'])) 
@@ -82,27 +81,25 @@
                                 echo "<p><img src='.$imagen_usuario'</p><br>
                                      +Sólo se permiten imágenes .jpg y de 130 kb como máximo.+</b></div><br>";
                                 echo "</div>";
+                                header('location:../index.php');
+                                die();
                             }else 
                                 {   //Si la imagen es correcta en tamaño y tipo e intenta subir al servidor cambiando la ubicación
                                     if (move_uploaded_file($temp, $ubicacion.$id.".jpg"))
                                     //move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfolder.'el_nombre_que_yo_quiera.jpg') 
                                         {
                                             $imagen_uruario = $ubicacion.$id.".jpg";
-                                            echo '<link rel="stylesheet" href="../css/estilo_form.css" type="text/css" media="all" />';
-
                                             echo "<p><img src='$imagen_uruario'></p>";
+                                            header('location:../index.php');
+                                            die();
                                         }else 
                                             {   //Si no se ha podido subir la imagen, mostramos un mensaje de error
-                                                echo '<link rel="stylesheet" href="../css/estilo_form.css" type="text/css" media="all" />';
-
                                                 echo '<div class="mensajes"><b>Ocurrió algún error al subir su.</b></div>';
+                                                header('location:../registro.php');
+                                                die();
                                             }
                                 }
-                    }else
-                        {
-                            echo '<link rel="stylesheet" href="../css/estilo_form.css" type="text/css" media="all" />';
-                            echo "<br>Seleccionar un archivo<br>";
-                        }
+                    }else{echo "<br>Seleccionar un archivo<br>";}
             }
         }
     echo '<link rel="stylesheet" href="../css/nav.css" type="text/css" media="all" />';

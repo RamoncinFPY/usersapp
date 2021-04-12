@@ -13,12 +13,11 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 //Expresiones regulares, para saber lo que cada input debe tener
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo.
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^[a-zA-Z0-9\_\-]{4,12}$/, // 4 a 12 digitos, Letras, numeros, guion y guion_bajo
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,//1ra expresion + la arroba porsupuesto + punto + dominios
-	// telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+	password: /^[a-zA-Z0-9\_\-]{4,12}$/, // Letras, numeros, guion y guion_bajo.4 a 12 digitos
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,// 1ra expresion + la arroba porsupuesto + punto + dominios
 }
 //Al principiio todos los campos como false
 const campos = {

@@ -36,23 +36,45 @@
     height: 20px;
   }
   .container1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  img {
+  .img_usuario {
     width: 200px;
     height: 200px;
+    border-radius: 50%;
   }
   span {
     color:#333;
     font-size: 25px;
   }
-  .salir {
-    letter-spacing: 7px;
+  .anclas {
+    border-radius: 3px;
+    letter-spacing: 6px;
     text-decoration: none;
     background-color: black;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
+    cursor: pointer;
+  }
 
+  .cajas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #caja2 {
+    visibility: hidden;
+    transition: height .4s;
+    text-align: center;
+  }
+
+  #caja3 {
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+    transition: height .4s;
+    text-align: center;
+    align-items: center;
   }
   
   @media screen and (max-width: 600px) {

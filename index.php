@@ -1,11 +1,3 @@
-<?php 
-	session_start();//inicia o recupera sesión
-	//compruebo que las dos entradas del formulario existan
-    if (isset($_SESSION["usuario"]) and isset($_SESSION["correo"]) and isset($_SESSION["password"])) {
-        echo "Bienvenido: ".$_SESSION["usuario"]."<br><br>";
-    }
-    
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -69,6 +61,15 @@
 			</div><br>
 		</form>
 	</main>
+	<?php 
+		session_start();//inicia o recupera sesión
+		//compruebo que las entradas del formulario existan
+		if (isset($_SESSION["usuario"]) and isset($_SESSION["correo"]) and isset($_SESSION["password"])) 
+			{
+				echo "Bienvenido: ".$_SESSION["usuario"]."<br><br>";
+			}
+	?>
+
 	<footer class="pie">
 		Abril 2021, by Ramón
 	</footer>

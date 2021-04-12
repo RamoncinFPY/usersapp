@@ -15,9 +15,6 @@
 	
 	<div class="topnav" id="myTopnav">
 		<a href="index.php">Login</a>
-		<a href="#" class="active">Registro</a>
-		<a href="editar.php">Editar</a>
-		<a href="eliminar.php">Eliminar</a>
 		<a href="about.php">About</a>
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 			<i class="fa fa-bars"></i>
@@ -97,16 +94,6 @@
 				</div>
 				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
 			</div>
-
-			<!-- Grupo: Teléfono -->
-			<!-- <div class="formulario__grupo" id="grupo__telefono">
-				<label for="telefono" class="formulario__label">Teléfono</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="0034123456789">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
-			</div> -->
 			
 			<!-- Grupo: Imagen -->
 			<div class="formulario__grupo" id="">
