@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
+	<script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	
@@ -71,11 +72,13 @@
 			<div class="formulario__grupo" id="grupo__correo">
 				<label for="correo" class="formulario__label">Correo Electrónico</label>
 				<div class="formulario__grupo-input">
-					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com"
+					oninput="check()">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
 			</div>
+			<!-- Comprobación del correo electrónico -->
 			<div class="formulario__grupo" id="grupo__correo2">
 				<label for="correo2" class="formulario__label">Correo Electrónico</label>
 				<div class="formulario__grupo-input">
@@ -87,12 +90,15 @@
 
 			<!-- Grupo: Usuario -->
 			<div class="formulario__grupo" id="grupo__usuario">
-				<label for="usuario" class="formulario__label">Usuario</label>
+				<label for="usuario" class="formulario__label">Usuario(Fíjate si está disponible o nó!)</label>
 				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="usuario_123">
+					<input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="usuario_123" oninput="check()">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					<p><img src="img/Spinner-3.gif" id="preloader" style="display:none" ></p>
 				</div>
 				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+				<p id="mensaje_longitud" class="formulario__input-error">MÍNIMO 4 CARACTERESs</p>
+				<span id="missatge"></span>
 			</div>
 			
 			<!-- Grupo: Imagen -->
@@ -110,6 +116,7 @@
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<button type="submit" class="formulario__btn" name="enviar">Enviar</button>
+					<!-- <span id="enviar" type="submit" class="formulario__btn" name="enviar"></span> -->
 				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
 			</div>
 		</form>
@@ -117,7 +124,8 @@
 
 	<footer class="pie">
         Abril 2021, by Ramón
-    </footer>
+     </footer>
+     <script src="js/checkuser.js"></script>
 	<script src="js/formulario.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>

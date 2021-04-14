@@ -32,7 +32,7 @@ const campos = {
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "usuario":
-			validarCampo(expresiones.usuario, e.target, 'usuario');
+			validarUsuario(expresiones.usuario, e.target, 'usuario');
 		break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
@@ -54,9 +54,6 @@ const validarFormulario = (e) => {
 		case "correo2":
 			validarCorreo2();
 		break;
-		// case "telefono":
-		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
-		// break;
 	}
 }
 //Función para validar todos los inputs
@@ -77,6 +74,28 @@ const validarCampo = (expresion, input, campo) => {
 		campos[campo] = false;
 	}
 }
+//Para validar el usuario
+function validarUsuario(expresion, input, campo){
+	const user = document.getElementById("usuario").value;
+	if(user.length > 3 && expresion.test(input.value)) 
+		{ //mínimo 4 caracteres
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+
+}
+
 //Para validar las contraseñas
 const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
@@ -129,9 +148,9 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
 	// e.preventDefault();
 
-	const terminos = document.getElementById('terminos');
+	// const terminos = document.getElementById('terminos');
 	//comprobación de todos los inputs
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && terminos.apellido ){
 		// formulario.reset();//para vaciar el formulario
 		//Mensaje de envío correcto
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
+	<script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<h2>&nbsp;&nbsp;&nbsp;&nbsp;Si aún no estás registrado, hazlo aquí</h2>

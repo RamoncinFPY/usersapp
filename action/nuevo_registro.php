@@ -16,13 +16,12 @@
     $basededatos = "usersapp";
     $tabla = "usuarios";
 
-    if(($_POST == null) or ($_POST == ""))
+    if(!isset($_POST))
         {
             session_destroy();
             header("location:../registro.php");
             die();
         }
-         
     //validación del formulario
     if(!isset($_POST['nombre'])) echo "El campo es obligatotio!<br>";
     if(!isset($_POST['apellido'])) echo "El campo es obligatotio!<br>";
@@ -81,7 +80,7 @@
                                 echo "<p><img src='.$imagen_usuario'</p><br>
                                      +Sólo se permiten imágenes .jpg y de 130 kb como máximo.+</b></div><br>";
                                 echo "</div>";
-                                header('location:../index.php');
+                                header('location:../pag_usuario.php');
                                 die();
                             }else 
                                 {   //Si la imagen es correcta en tamaño y tipo e intenta subir al servidor cambiando la ubicación
@@ -90,16 +89,20 @@
                                         {
                                             $imagen_uruario = $ubicacion.$id.".jpg";
                                             echo "<p><img src='$imagen_uruario'></p>";
-                                            header('location:../index.php');
+                                            header('location:../pag_usuario.php');
                                             die();
                                         }else 
                                             {   //Si no se ha podido subir la imagen, mostramos un mensaje de error
                                                 echo '<div class="mensajes"><b>Ocurrió algún error al subir su.</b></div>';
-                                                header('location:../registro.php');
+                                                header('location:../pag_usuario.php');
                                                 die();
                                             }
                                 }
-                    }else{echo "<br>Seleccionar un archivo<br>";}
+                    }else
+                        {
+                            header('location:../pag_usuario.php');
+                            die();
+                        }
             }
         }
     echo '<link rel="stylesheet" href="../css/nav.css" type="text/css" media="all" />';

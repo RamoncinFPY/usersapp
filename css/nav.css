@@ -43,10 +43,7 @@
     height: 200px;
     border-radius: 50%;
   }
-  span {
-    color:#333;
-    font-size: 25px;
-  }
+  
   .anclas {
     border-radius: 3px;
     letter-spacing: 6px;
@@ -75,6 +72,17 @@
     transition: height .4s;
     text-align: center;
     align-items: center;
+  }
+
+
+  .disponible {
+    color: rgb(105, 167, 12);
+    font-size: 120%;
+  }
+
+  .no_disponible {
+    color: red;
+    font-size: 120%;
   }
   
   @media screen and (max-width: 600px) {
